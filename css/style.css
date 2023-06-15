@@ -1,0 +1,47 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background-color: rgb(41, 41, 41);
+   background-image: url(../assets/img/elvis-bekmanis-p0GZQ-2yvLU-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: transparent;
+  box-shadow: 0 0 20px rgba(108, 162, 237, 0.6); 
+  width: 450px;  
+  color: white;
+  padding: 20px;
+  margin: 50px auto 0;
+  border-radius: 10px; 
+  align-items: center ;
+}
+
+input{
+  border: 0;
+  outline: 0;
+  padding: 10px 22px; 
+  margin-right: 20px;
+  border-radius: 30px;
+  font-size: 18px;
+  background-color: rgb(233, 240, 240);
+  color: black;
+}
+
+.containerClima{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
