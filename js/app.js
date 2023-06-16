@@ -31,18 +31,36 @@ const containerClima = document.querySelector(".containerClima");
           const data = await response.json();
           
 
-      //console.log(data); 
+          console.log(data); 
+          
       
+          containerClima.innerHTML = `
+                                          <div class="city">
+                                              <div class="cityName">
+                                                  <p>Ciudad: ${data.name }</p> 
+                                                  <p class="celcius"> ${Math.round(data.main.temp)} ºC</p>
+                                              </div>
+                                              
+                                          <div>  
+                                          <div class="image">
+                                              <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="">
+                                          </div>                                              
+                                          <div class="cardGroup">
+                                              <div class="card">
+                                                  <p>Temperatura minima: ${Math.round(data.main.temp_min)}</p>
+                                              </div>
+                                               <div class="card">
+                                                  <p>Temperatura maxima: ${Math.round(data.main.temp_max)}</p>
+                                              </div>                               
+                                               <div class="card">
+                                                  <p>Humedad: ${data.main.humidity}</p>
+                                              </div>
+                                               <div class="card">
+                                                  <p class="windS">velocidad del viento ${Math.round(data.wind.speed)} Km/h</p>
+                                              </div>
+                                          </div>
 
-
-      // <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
-            containerClima.innerHTML = `<p class="celcius"> ${Math.round(data.main.temp)} ºC</p>
-      
-                                  <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="">
-                                  <p>Ciudad: ${data.name }</p>
-                                
-                                  <p class="windS">La velocidad del viento ${Math.round(data.wind.speed)} Km/h</p>
-                                  `
+                                      `
 
     } catch (error) {
       console.log('Error');
