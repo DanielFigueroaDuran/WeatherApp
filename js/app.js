@@ -18,35 +18,29 @@ const containerClima = document.querySelector(".containerClima");
       //console.log(nameCity.value);
   
         getData(url);
-
-      //console.log(getData);
+    
   
     });
 
     
-    // const clima = data.map((e) => {
-      
-      //  });
       
       const getData = async (url) => { 
         try {
-          //console.log(url);
+          
           const response = await fetch(url);
           const data = await response.json();
           
-          const clima = 
-            
-          console.log();
 
-      console.log(data); 
+      //console.log(data); 
       
 
 
-      // <img src="${data.weather[0].icon}" alt="">
-      containerClima.innerHTML = `<p class="celcius"> ${Math.round(data.main.temp)} ºC</p>
-                                  
+      // <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+            containerClima.innerHTML = `<p class="celcius"> ${Math.round(data.main.temp)} ºC</p>
+      
+                                  <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="">
                                   <p>Ciudad: ${data.name }</p>
-                                  
+                                
                                   <p class="windS">La velocidad del viento ${Math.round(data.wind.speed)} Km/h</p>
                                   `
 
